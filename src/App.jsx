@@ -1,73 +1,55 @@
+import React from "react";
+import Hero from "./components/Hero";
+import WhatItDoes from "./components/WhatItDoes";
+import WhyItHelps from "./components/WhyItHelps";
+import WhoItsFor from "./components/WhoItsFor";
+import HowItWorks from "./components/HowItWorks";
+import FeatureBlocks from "./components/FeatureBlocks";
+import SmartInsights from "./components/SmartInsights";
+import Pricing from "./components/Pricing";
+import FAQ from "./components/FAQ";
+import CTA from "./components/CTA";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(1200px_700px_at_10%_-10%,rgba(59,130,246,0.15),transparent),radial-gradient(900px_500px_at_100%_10%,rgba(59,130,246,0.12),transparent)]" />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
+      <header className="relative z-10 border-b border-slate-800/70">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-2">
+            <div className="h-7 w-7 rounded bg-blue-500" />
+            <span className="font-semibold tracking-tight">Pepstack</span>
           </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
+          <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-300">
+            <a href="#features" className="hover:text-white">Features</a>
+            <a href="#pricing" className="hover:text-white">Pricing</a>
+            <a href="#faq" className="hover:text-white">FAQ</a>
+          </nav>
+          <a href="#pricing" className="rounded-lg bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-400">Start trial</a>
         </div>
-      </div>
+      </header>
+
+      <main className="relative z-10">
+        <Hero />
+        <WhatItDoes />
+        <WhyItHelps />
+        <WhoItsFor />
+        <HowItWorks />
+        <FeatureBlocks />
+        <SmartInsights />
+        <Pricing />
+        <FAQ />
+        <CTA />
+      </main>
+
+      <footer className="relative z-10 border-t border-slate-800/70">
+        <div className="mx-auto max-w-6xl px-6 py-6 text-sm text-slate-400">
+          © {new Date().getFullYear()} Pepstack. All rights reserved.
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
